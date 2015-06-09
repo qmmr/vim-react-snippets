@@ -1,43 +1,49 @@
-snippet cdm
-	componentDidMount() {
-		$1
-	},
-snippet cdup
-	componentDidUpdate(prevProps, prevState) {
-		$1
-	},
 snippet cwm
 	componentWillMount() {
 		$1
-	},
+	}
+snippet cdm
+	componentDidMount() {
+		$1
+	}
 snippet cwr
 	componentWillReceiveProps(nextProps) {
 		$1
-	},
-snippet cwun
-	componentWillUnmount() {
+	}
+snippet scu
+	shouldComponentUpdate(nextProps, nextState) {
 		$1
-	},
+	}
 snippet cwu
 	componentWillUpdate(nextProps, nextState) {
 		$1
-	},
+	}
+snippet cdup
+	componentDidUpdate(prevProps, prevState) {
+		$1
+	}
+snippet cwun
+	componentWillUnmount() {
+		$1
+	}
 snippet fup
-	forceUpdate(${1:callback});
+	forceUpdate(${1:callback})
 snippet dp
 	${1:component}.defaultProps = {
 		${2:key}: ${3:val}
+	}
+snippet pt
+	${1:component}.propTypes = {
+		${2:key}: PropTypes.${3:string}
 	}
 snippet ism
 	isMounted()
 snippet ir
 	import React from 'react'
 snippet irc
+	import React${1:, { Component } } from 'react'
+snippet ircp
 	import React${1:, { Component, PropTypes } } from 'react'
-snippet pt
-	${1:component}.propTypes = {
-		${2:key}: PropTypes.${3:string}
-	}
 snippet rcc
 	import React, { Component, PropTypes } from 'react'
 
@@ -57,6 +63,23 @@ snippet rcc
 	$1.propTypes = {$3}
 
 	export default $1
+snippet rcs
+	import React, { Component } from 'react'
+
+	class ${1:component} extends Component {
+		constructor(props) {
+			super(props)
+		}
+
+		render() {
+			return ${0:<div />}
+		}
+
+	}
+
+	$1.displayName = '$1'
+
+	export default $1
 snippet ren
 	render() {
 		return (
@@ -67,10 +90,6 @@ snippet sst
 	this.setState({
 		$1: $2
 	})
-snippet scu
-	shouldComponentUpdate(nextProps, nextState) {
-		$1
-	},
 snippet props
 	this.props.$1
 snippet state
